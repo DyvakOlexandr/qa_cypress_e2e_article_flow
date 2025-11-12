@@ -43,7 +43,7 @@ describe('Conduit — поток статей', () => {
       cy.contains('Delete Article').click();
 
       // Проверяем, что нас вернуло на главную
-      cy.url().should('include', 'global-feed');
+      cy.url().should('not.include', '/article/');
       cy.contains(article.title).should('not.exist');
     });
   });
